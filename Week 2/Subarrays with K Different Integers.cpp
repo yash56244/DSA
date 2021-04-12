@@ -7,11 +7,13 @@ int atMost(vector<int>& arr, int k){
     unordered_map<int, int> ump;
     int left = 0;
     for(int right = 0; right < n; right++){
-        if(!ump[arr[right]]++){
+        if(!ump[arr[right]]){
             k--;
         }
+        ump[arr[right]]++;
         while(k < 0){
-            if(!--ump[arr[left]]){
+            ump[arr[left]]--;
+            if(!ump[arr[left]]){
                 k++;
             }
             left++;
