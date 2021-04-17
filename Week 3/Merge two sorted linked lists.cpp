@@ -12,11 +12,11 @@ Node* sortedMerge(Node* head1, Node* head2)
             break;
         }
 		if(head1->data >= head2->data){
-            dummy->next = new Node(head2->data);
+            dummy->next = head2;
             dummy = dummy->next;
             head2 = head2->next;
         }else{
-            dummy->next = new Node(head1->data);
+            dummy->next = head1;
             dummy = dummy->next;
             head1 = head1->next;
         }
