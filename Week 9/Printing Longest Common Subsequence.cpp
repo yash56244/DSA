@@ -1,3 +1,4 @@
+
 void printLCS(int x, int y, string s1, string s2)
 {
     int dp[x + 1][y + 1];
@@ -19,10 +20,10 @@ void printLCS(int x, int y, string s1, string s2)
     int i = x, j = y;
     while(i > 0 && j > 0){
     	if(s1[i - 1] == s2[j - 1]){
-    		i--;
-    		j--;
     		lcs[len - 1] = s1[i - 1];
     		len--;
+    		i--;
+    		j--;
 		}
 		else if(dp[i - 1][j] > dp[i][j - 1]){
 			i--;
